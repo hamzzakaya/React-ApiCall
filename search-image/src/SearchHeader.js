@@ -1,10 +1,19 @@
-function SearchHeader() {
-    return (<div className="searchDiv">
-        <form>
-            <label>Ne Arıyorsunuz ?</label>
-            <input/>
-        </form>
-    </div> );
+function SearchHeader({search}) {
+
+    const handleFormSubmit = (event) =>{
+        event.preventDefault();
+        search('hamza')
+    }
+
+
+
+    return (
+        <div className="searchDiv">
+            <form onSubmit={handleFormSubmit} >
+                <label>Ne Arıyorsunuz ?</label>
+                <input />
+            </form>
+        </div>);
 }
 
 export default SearchHeader;
