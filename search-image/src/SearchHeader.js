@@ -2,7 +2,7 @@ function SearchHeader({search}) {
 
     const handleFormSubmit = (event) =>{
         event.preventDefault();
-        search('hamza')
+        search('can')
     }
 
 
@@ -10,7 +10,7 @@ function SearchHeader({search}) {
     return (
         <div className="searchDiv">
             <form onSubmit={handleFormSubmit} >
-                <label>Ne Arıyorsunuz ?</label>
+                <label>Ne Ariyorsunuz ?</label>
                 <input />
             </form>
         </div>);
