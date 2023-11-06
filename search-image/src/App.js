@@ -1,26 +1,23 @@
 import searchImages from "./Api";
 import { useEffect, useState } from "react";
-import logo from './logo.svg';
 import './App.css';
 import SearchHeader from './SearchHeader';
+import ImageList from "./components/ImageList";
 
 function App() {
-
-  
-  const handleSubmit = (term) => {
-
-    searchImages(term)
-    console.log(term)
+  const [images, setImages] = useState([])
+  const handleSubmit = async (term) => {
+    const result = await searchImages(term)
+    setImages(result)
 
   }
-
   return (
     <div className="App">
 
       <SearchHeader search={handleSubmit} />
+      <ImageList imagesPlaceholder={images} />
 
     </div>
   );
 }
-
 export default App;

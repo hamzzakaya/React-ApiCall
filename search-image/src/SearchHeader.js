@@ -1,19 +1,20 @@
-function SearchHeader({search}) {
+import { useState } from "react";
 
-    const handleFormSubmit = (event) =>{
+function SearchHeader({ search }) {
+    const [valueInput, setValue] = useState('')
+    const handleFormSubmit = (event) => {
         event.preventDefault();
-        search('can')
+        search(valueInput)
     }
-
-
-
+    const handleChange = (event) => {
+        setValue(event.target.value)
+    }
     return (
         <div className="searchDiv">
             <form onSubmit={handleFormSubmit} >
                 <label>Ne Ariyorsunuz ?</label>
-                <input />
+                <input value={valueInput} onChange={handleChange} />
             </form>
         </div>);
 }
-
 export default SearchHeader;
